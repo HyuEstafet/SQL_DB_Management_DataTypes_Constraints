@@ -1,4 +1,4 @@
--- Create a daabase called orders_management database
+-- Create a database called orders_management database
 CREATE DATABASE orders_management;
 
 -- Rename the database
@@ -10,10 +10,10 @@ DROP DATABASE orders_management;
 
 -- Backup orders_management database with timestamp
 BACKUP DATABASE orders_management
-TO DISK = 'D:\';
+TO DISK = 'D:\'; -- NOT working
 
 -- Create a customers table in orders_management db
-CREATE TABLE customers (
+CREATE TABLE orders_management.public.customers (
 customer_id serial PRIMARY KEY,
 customer_name varchar (255) NOT NULL,
 customer_email varchar (255) UNIQUE NOT NULL,
@@ -42,5 +42,9 @@ DROP TABLE customers;
 
 -- Truncate customers table
 TRUNCATE TABLE customers;
+)
+
+USE DATABASE orders_management;
+
 
 
